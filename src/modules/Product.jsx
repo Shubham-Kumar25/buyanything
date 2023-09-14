@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import NotFound from "../components/NotFound";
+import { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+
 import Loading from "../components/Loading";
 
 const Product = () => {
+  const navigate = useNavigate();
   const { id } = useParams();
   const [product, setProduct] = useState({});
 
@@ -19,6 +20,40 @@ const Product = () => {
   if (!Object.keys(product).length > 0) {
     return <Loading />;
   }
+
+  const handleCart = (product, redirect) => {
+    console.log(product);
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    // Check if the product already exists in the cart
+    const isProductExist = cart.find((item) => item.id === product.id);
+
+    if (isProductExist) {
+      // If the product exists, update its quantity
+      const updatedCart = cart.map((item) => {
+        if (item.id === product.id) {
+          return {
+            ...item,
+            quantity: item.quantity + 1,
+          };
+        }
+        return item;
+      });
+      localStorage.setItem("cart", JSON.stringify(updatedCart));
+    } else {
+      // If the product is not in the cart, add it with quantity 1
+      localStorage.setItem(
+        "cart",
+        JSON.stringify([...cart, { ...product, quantity: 1 }])
+      );
+    }
+
+    alert("Product Added to Cart");
+    if (redirect) {
+      // Corrected the function name to "navigate" (assuming it's a function for navigation)
+      navigate("/cart");
+    }
+  };
 
   return (
     <section className="overflow-hidden text-gray-600 body-font">
@@ -171,10 +206,16 @@ const Product = () => {
               <span className="text-2xl font-medium text-gray-900 title-font">
                 ₹{product?.price}
               </span>
-              <button className="flex px-6 py-2 ml-auto text-white bg-purple-500 border-0 rounded focus:outline-none hover:bg-purple-600">
+              <button
+                onClick={() => handleCart(product, true)}
+                className="flex px-6 py-2 ml-auto text-white bg-purple-500 border-0 rounded focus:outline-none hover:bg-purple-600"
+              >
                 Buy Now
               </button>
-              <button className="flex px-6 py-2 ml-4 text-purple-500 bg-transparent border border-purple-500 rounded focus:outline-none hover:text-white hover:bg-purple-500">
+              <button
+                className="flex px-6 py-2 ml-4 text-purple-500 bg-transparent border border-purple-500 rounded focus:outline-none hover:text-white hover:bg-purple-500"
+                onClick={() => handleCart(product)}
+              >
                 Add to Cart
               </button>
               <button className="inline-flex items-center justify-center w-10 h-10 p-0 ml-4 text-gray-500 bg-gray-200 border-0 rounded-full">

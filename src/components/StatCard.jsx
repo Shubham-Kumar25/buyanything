@@ -1,8 +1,6 @@
-import React from "react";
-
 const StatCard = () => {
   return (
-    <section className="text-gray-600  body-font">
+    <section className="text-gray-600 body-font">
       <div className="container px-5 py-24 mx-auto">
         <div className="flex flex-col w-full mb-20 text-center">
           <h1 className="mb-4 text-2xl font-medium text-gray-900 sm:text-3xl title-font">
@@ -15,7 +13,7 @@ const StatCard = () => {
         </div>
         <div className="flex flex-wrap -m-4 text-center">
           <div className="w-full p-4 md:w-1/4 sm:w-1/2">
-            <div className="px-4 py-6 border-2 border-gray-200 rounded-lg">
+            <div className="px-4 py-6 transition duration-300 bg-white border-2 border-gray-200 rounded-lg hover:shadow-md">
               <svg
                 fill="none"
                 stroke="currentColor"
@@ -35,7 +33,7 @@ const StatCard = () => {
             </div>
           </div>
           <div className="w-full p-4 md:w-1/4 sm:w-1/2">
-            <div className="px-4 py-6 border-2 border-gray-200 rounded-lg">
+            <div className="px-4 py-6 transition duration-300 bg-white border-2 border-gray-200 rounded-lg hover:shadow-md">
               <svg
                 fill="none"
                 stroke="currentColor"
@@ -56,7 +54,7 @@ const StatCard = () => {
             </div>
           </div>
           <div className="w-full p-4 md:w-1/4 sm:w-1/2">
-            <div className="px-4 py-6 border-2 border-gray-200 rounded-lg">
+            <div className="px-4 py-6 transition duration-300 bg-white border-2 border-gray-200 rounded-lg hover:shadow-md">
               <svg
                 fill="none"
                 stroke="currentColor"
@@ -76,7 +74,7 @@ const StatCard = () => {
             </div>
           </div>
           <div className="w-full p-4 md:w-1/4 sm:w-1/2">
-            <div className="px-4 py-6 border-2 border-gray-200 rounded-lg">
+            <div className="px-4 py-6 transition duration-300 bg-white border-2 border-gray-200 rounded-lg hover:shadow-md">
               <svg
                 fill="none"
                 stroke="currentColor"

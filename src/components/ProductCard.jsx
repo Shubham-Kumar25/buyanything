@@ -1,7 +1,6 @@
-import React from "react";
 import { Link } from "react-router-dom";
 
-const Products = ({ products }) => {
+const ProductCard = ({ products }) => {
   return (
     <section className="text-gray-600 body-font">
       <div className="container px-5 py-24 mx-auto">
@@ -11,16 +10,22 @@ const Products = ({ products }) => {
             return (
               <Link
                 to={`/products/${id}`}
-                className="p-4 border border-opacity-50 rounded-lg shadow-lg cursor-pointer"
+                className="p-4 transition duration-300 border border-opacity-50 rounded-lg shadow-lg cursor-pointer hover:shadow-xl"
                 key={id}
               >
-                <a className="block overflow-hidden rounded">
+                <div className="relative overflow-hidden rounded">
                   <img
                     alt={title}
                     className="object-contain object-center w-full h-48"
                     src={image}
                   />
-                </a>
+                  <div className="absolute inset-0 transition duration-300 bg-black opacity-0 hover:opacity-50"></div>
+                  <div className="absolute inset-0 flex items-center justify-center transition duration-300 opacity-0 group-hover:opacity-100">
+                    <span className="text-sm font-semibold text-white">
+                      View Details
+                    </span>
+                  </div>
+                </div>
 
                 <div className="mt-4">
                   <h3 className="text-xs font-semibold text-gray-500 uppercase">
@@ -38,4 +43,4 @@ const Products = ({ products }) => {
   );
 };
 
-export default Products;
+export default ProductCard;
