@@ -21,7 +21,7 @@ const navigations = [
 
 const Header = () => {
   return (
-    <header className="fixed z-10 w-full text-gray-900 bg-white shadow-lg body-font">
+    <header className="fixed top-0 z-10 w-full text-gray-900 bg-white shadow-lg body-font">
       <div className="container flex flex-col flex-wrap items-center p-5 mx-auto md:flex-row">
         <Link
           to="/"
