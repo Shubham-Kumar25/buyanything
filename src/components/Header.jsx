@@ -35,7 +35,10 @@ const Header = () => {
             className="w-10 h-10 p-1 text-purple-500 bg-white rounded-full"
             viewBox="0 0 24 24"
           >
-            <image className="w-full h-full" href="../src/img/logo.png" />
+            <image
+              className="w-full h-full"
+              href="https://banner2.cleanpng.com/20180323/iyw/kisspng-mobile-phones-mobile-commerce-online-shopping-comp-shopping-bag-5ab5c0008e0e23.4357874815218606085819.jpg"
+            />
           </svg>
           <span className="ml-3 text-xl">BuyAnything</span>
         </Link>

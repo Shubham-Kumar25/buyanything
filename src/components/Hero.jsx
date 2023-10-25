@@ -6,7 +6,7 @@ const Hero = () => {
           <img
             className="object-cover object-center rounded-lg"
             alt="hero"
-            src="../src/img/heroimg.jpg"
+            src="https://images.pexels.com/photos/919453/pexels-photo-919453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
           />
         </div>
         <div className="flex flex-col items-center text-center lg:flex-grow md:w-1/2 lg:pl-10 md:pl-5 md:items-start md:text-left">

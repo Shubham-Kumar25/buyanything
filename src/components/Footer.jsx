@@ -18,9 +18,9 @@ const Footer = () => {
             className="flex items-center justify-center font-medium text-gray-900 cursor-pointer title-font md:justify-start"
           >
             <img
-              src="../src/img/logo.png"
+              src="https://banner2.cleanpng.com/20180323/iyw/kisspng-mobile-phones-mobile-commerce-online-shopping-comp-shopping-bag-5ab5c0008e0e23.4357874815218606085819.jpg"
               alt="BuyAnything Logo"
-              className="w-10 h-10 p-1 text-white bg-purple-500 rounded-full"
+              className="object-fill w-10 h-10 text-white bg-purple-500 rounded-full"
             />
             <span className="ml-3 text-xl">BuyAnything</span>
           </a>
